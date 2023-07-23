@@ -8,7 +8,7 @@ resource "aws_api_gateway_rest_api" "api" {
 resource "aws_api_gateway_resource" "api_resource" {
   rest_api_id = aws_api_gateway_rest_api.api.id
   parent_id   = aws_api_gateway_rest_api.api.root_resource_id
-  path_part   = "users"  # Replace with the desired resource path: https://2hmnj999ic.execute-api.us-west-1.amazonaws.com/stage-01/users
+  path_part   = "users"  # Resource path: https://*.amazonaws.com/stage-01/users
 }
 
 # Define at least one method in the API Gateway REST API before creating the deployment

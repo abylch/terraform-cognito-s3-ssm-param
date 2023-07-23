@@ -1,3 +1,6 @@
+variable "region" {
+    default =  "us-west-1"
+}
 variable "availability_zone" {
     description = "The  availability zone"
     type        = map(string)
@@ -5,6 +8,10 @@ variable "availability_zone" {
         a = "us-west-1a"
         c = "us-west-1c"
   }
+}
+
+variable "acc" {
+    default = "404057943866"
 }
 
 variable "api_name" {
@@ -50,3 +57,41 @@ variable "bucket_name" {
 variable "acl_value" {
     default = "private"
 }
+
+# Cors allow_headers
+variable "allow_headers" {
+  description = "Allow headers"
+  type        = list(string)
+
+  default = [
+    "Authorization",
+    "Content-Type",
+    "X-Amz-Date",
+    "X-Amz-Security-Token",
+    "X-Api-Key",
+  ]
+}
+
+# Cors allow_methods
+variable "allow_methods" {
+  description = "Allow methods"
+  type        = list(string)
+
+  default = [
+    "OPTIONS",
+    "HEAD",
+    "GET",
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+  ]
+}
+
+# Cors Allow_origin
+variable "allow_origin" {
+  description = "Allow origin"
+  type        = string
+  default     = "*"
+}
+
